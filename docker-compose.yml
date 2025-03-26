@@ -1,15 +1,6 @@
-version: '3.8'
-
 services:
-  app:
-    image: node:14
-    container_name: power-six
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+  web:
+    build: .
+    container_name: power-six-web
     ports:
-      - "3000:3000"
-    environment:
-      NODE_ENV: development
-    command: bash -c "npm install && npm start"
+      - "80:80"
